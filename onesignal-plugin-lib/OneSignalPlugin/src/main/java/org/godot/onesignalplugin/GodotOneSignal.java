@@ -26,13 +26,13 @@ public class GodotOneSignal extends GodotPlugin {
     }
 
     @UsedByGodot
-    public void init(String appKey , boolean debug) {
+    public void initialize(String appKey , boolean debug) {
         // OneSignal Initialization
         if(debug){
             OneSignal.setLogLevel(OneSignal.LOG_LEVEL.VERBOSE, OneSignal.LOG_LEVEL.NONE);
         }
 
-        OneSignal.initWithContext(Objects.requireNonNull(getActivity()));
+        OneSignal.initWithContext(getActivity());
         OneSignal.setAppId(appKey);
     }
 }
